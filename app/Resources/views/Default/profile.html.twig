@@ -1,0 +1,35 @@
+
+
+<img src="{{ client.getAvatar() }}" class="thumbnail img-responsive" />
+
+<h1>{{ client.getFirstName() }} {{ client.getLastName }}</h1>
+<h2>{{ login }}</h2>
+
+<hr />
+
+<ul class="list-unstyled">
+
+   <li>{{ client.getBio() }}</li>
+   <li>{{ client.getCountry() }}, {{ client.getCity() }}</li>
+
+    <li><a href="{{ blog }}">{{ blog }}</a></li>
+</ul>
+
+<hr />
+
+<ul class="list-inline">
+    {% for key, value in social_data %}
+    <li><span class="social-metric-count">{{ value }}</span>
+        <br />
+        <span class="small muted">{{ key }}</span>
+    </li>
+    {% endfor %}
+</ul>
+
+{% if client.getId() == 1 %}
+hallo
+{% elseif client.getId() == 2 %}
+Hola
+{% else %}
+Doei
+{% endif %}
